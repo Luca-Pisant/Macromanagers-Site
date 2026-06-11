@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Macro Calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<button id="back-button" class="back-button hidden" type="button">Back</button>
+<button id="home-button" class="home-button" type="button">Home</button>
+
+<main>
+    <div id="homepage" class="page homepage">
+        <h1 id="home-title">Macro Calculator</h1>
+        <p class="home-text">Please Fill Out the Form for Accurate Meal Plans:</p>
+        <button id="start-button" class="start-button" type="button">Form</button>
+        <form id="login-form" class="login-form">
+            <label for="login-email">For Returning Users:</label>
+            <input id="login-email" name="login-email" type="email" placeholder="Email">
+            <button type="submit">Log In</button>
+        </form>
+    </div>
+
+    <div id="formpage1" class="page formpage hidden">
+        <h1 id="form-title">Form</h1>
+        <form id="height-weight-form" class="height-weight-form">
+            <label for="height">Height (inches)</label>
+            <input id="height" name="height" type="number" placeholder="Height" required>
+
+            <label for="weight">Weight (lbs)</label>
+            <input id="weight" name="weight" type="number" placeholder="Weight" required>
+
+            <label for="age">Age</label>
+            <input id="age" name="age" type="number" placeholder="Age" required>
+
+            <label for="sex">Sex</label>
+            <select id="sex" name="sex" required>
+                <option value="">Select</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+
+            <button type="submit">Next</button>
+        </form>
+    </div>
+
+    <div id="formpage2" class="page formpage hidden">
+        <h1 id="slider-title">Form</h1>
+        <form class="slider">
+            <div class="container">
+                <hr class="horizontal-line">
+                <span id="slider-value-label" class="slider-value-label">15%</span>
+                <button id="slider-btn" class="slider-button" type="button">J</button>
+            </div>
+        </form>
+        <div class="body-preview" aria-label="Body preview">
+            <svg id="body-svg" viewBox="-24 0 240 260" role="img" aria-labelledby="body-preview-title">
+                <title id="body-preview-title">Side angle body preview</title>
+                <circle class="body-part skin" cx="96" cy="38" r="18"></circle>
+                <line class="body-line" x1="95" y1="56" x2="96" y2="78"></line>
+                <path class="body-line" d="M101 86 C118 112 122 133 126 156"></path>
+                <ellipse id="belly" class="skin" cx="96" cy="116" rx="18" ry="43"></ellipse>
+                <path class="body-line" d="M91 86 C74 112 70 133 66 156"></path>
+                <line class="body-line" x1="95" y1="157" x2="79" y2="232"></line>
+                <line class="body-line" x1="101" y1="157" x2="125" y2="232"></line>
+                <line class="body-line" x1="71" y1="232" x2="90" y2="232"></line>
+                <line class="body-line" x1="117" y1="232" x2="137" y2="232"></line>
+            </svg>
+        </div>
+        <button id="formpage2-next-button" type="button">Next</button>
+    </div>
+
+    <div id="formpage4" class="page formpage hidden">
+        <h1 id="goals-title">Form</h1>
+        <p id="goals-text">What is your fitness goal?</p>
+        <form id="goal-form" class="goal-form">
+            <div class="goal-options" role="group" aria-label="Goals">
+                <button class="goal-option" type="button" data-goal="weight-loss">Weight Loss</button>
+                <button class="goal-option" type="button" data-goal="maintenance">Maintenance</button>
+                <button class="goal-option" type="button" data-goal="muscle-gain">Muscle Gain</button>
+            </div>
+            <button type="submit">Next</button>
+        </form>
+    </div>
+
+    <div id="formpage3" class="page formpage hidden">
+        <h1 id="formpage3-title">Form</h1>
+        <p id="activity-text">What is you activity level?</p>
+        <form id="activity-form" class="activity-form">
+            <div class="activity-options" role="group" aria-label="Activity level">
+                <button class="activity-option" type="button" data-activity="mild">Mild</button>
+                <button class="activity-option" type="button" data-activity="moderate">Moderate</button>
+                <button class="activity-option" type="button" data-activity="high">High</button>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <div id="resultspage" class="page formpage hidden">
+        <h1 id="results-title">Results</h1>
+        <div class="results-summary">
+            <p>Results summary:</p>
+        </div>
+    </div>
+
+    <div id="mealspage" class="page formpage hidden">
+        <h1 id="meals-title">Meals</h1>
+        <div id="meals-grid" class="meals-grid" aria-label="Meal recommendations"></div>
+    </div>
+</main>
+
+<div id="save-modal" class="modal-overlay hidden">
+    <div class="modal-window" role="dialog" aria-modal="true" aria-labelledby="save-modal-title">
+        <h2 id="save-modal-title">Save Your Results</h2>
+        <form id="save-user-form" class="save-user-form">
+            <label for="user-name">Name</label>
+            <input id="user-name" name="user-name" type="text" placeholder="Name" required>
+
+            <label for="user-email">Email</label>
+            <input id="user-email" name="user-email" type="email" placeholder="Email" required>
+
+            <div class="modal-actions">
+                <button type="submit">Submit</button>
+                <button id="save-cancel-button" type="button">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="index.js"></script>
+</body>
+</html>

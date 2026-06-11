@@ -1,0 +1,323 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin: 0;
+}
+
+hr {
+    width: 500px;
+}
+
+#home-title,
+#goals-title,
+#form-title,
+#slider-title,
+#formpage3-title,
+#results-title,
+#meals-title {
+    font-size: 36px;
+    font-weight: bold;
+    letter-spacing: 0;
+    text-align: center;
+}
+
+.page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+.hidden {
+    display: none;
+}
+
+.home-text, .goals-text, .activity-text {
+    font-size: 22px;
+    margin: 0;
+}
+
+#formpage2 {
+    justify-content: flex-start;
+    padding-top: 120px;
+}
+
+button:not(.slider-button) {
+    cursor: pointer;
+    border: 0;
+    border-radius: 8px;
+    background: #2364aa;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 18px;
+}
+
+.home-button,
+.back-button {
+    position: fixed;
+    top: 16px;
+    z-index: 1;
+}
+
+.home-button:hover {
+    transform: scale(1.04);
+}
+
+.back-button:hover {
+    transform: scale(1.04);
+}
+
+.start-button:hover,
+.height-weight-form button:hover,
+#formpage2-next-button:hover,
+.activity-form button[type="submit"]:hover,
+.goal-form button[type="submit"]:hover,
+.login-form button:hover,
+.save-user-form button:hover,
+#save-cancel-button:hover,
+#generate-meals-button:hover,
+.meal-card:hover {
+    transform: scale(1.04);
+}
+
+.home-button {
+    right: 16px;
+}
+
+.back-button {
+    left: 16px;
+}
+
+.height-weight-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: min(320px, 100%);
+    text-align: left;
+}
+
+.height-weight-form input,
+.height-weight-form select {
+    border: 1px solid #bbb;
+    border-radius: 8px;
+    font-size: 16px;
+    padding: 10px;
+}
+
+.login-form,
+.save-user-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: min(320px, 100%);
+    text-align: left;
+}
+
+.login-form {
+    margin-top: 18px;
+}
+
+.login-form input,
+.save-user-form input {
+    border: 1px solid #bbb;
+    border-radius: 8px;
+    font-size: 16px;
+    padding: 10px;
+}
+
+.activity-form,
+.goal-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    width: min(640px, 100%);
+}
+
+.activity-options,
+.goal-options {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    width: 100%;
+}
+
+.activity-option,
+.goal-option {
+    min-height: 120px;
+    border: 3px solid #bbb !important;
+    background: white !important;
+    color: #111 !important;
+}
+
+.activity-option:hover,
+.goal-option:hover {
+    transform: scale(1.04) !important;
+}
+
+.activity-option.selected,
+.goal-option.selected {
+    border-color: #2364aa !important;
+}
+
+.results-summary {
+    font-size: 18px;
+}
+
+#mealspage {
+    justify-content: flex-start;
+    padding-top: 96px;
+}
+
+.meals-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+    width: min(1180px, 100%);
+}
+
+.meal-card {
+    position: relative;
+    aspect-ratio: 340 / 510;
+    border-radius: 8px !important;
+    background-color: #d9d9d9 !important;
+    color: #111 !important;
+    overflow: hidden;
+    padding: 0 !important;
+}
+
+.meal-card-image,
+.meal-card-placeholder {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #d9d9d9;
+}
+
+.meal-card-image {
+    object-fit: contain;
+}
+
+.meal-card span {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 38px;
+    padding: 0 8px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #111;
+    font-size: 14px;
+    line-height: 1.2;
+    transition: min-height 0.2s ease;
+}
+
+.meal-card:hover span {
+    min-height: 76px;
+}
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.35);
+    padding: 24px;
+    z-index: 2;
+}
+
+.modal-overlay.hidden {
+    display: none;
+}
+
+.modal-window {
+    width: min(420px, 100%);
+    border-radius: 8px;
+    background: white;
+    padding: 24px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.slider {
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 18vh;
+    position: relative;
+}
+
+.horizontal-line {
+    width: 35%;
+    border: none;
+    border-top: 3px solid black;
+    margin: 0;
+}
+
+.slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    cursor: grab;
+    user-select: none;
+    background-color: black;
+    border: black 1px solid;
+    border-radius: 8px;
+}
+
+.slider-button:active {
+    cursor: grabbing;
+}
+
+.slider-value-label {
+    position: absolute;
+    top: calc(50% - 42px);
+    transform: translateX(-50%);
+    font-size: 16px;
+    font-weight: bold;
+    user-select: none;
+}
+
+.body-preview {
+    width: min(300px, 80vw);
+    margin-top: 8px;
+}
+
+#body-svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.skin {
+    fill: #f0c7a8;
+    stroke: #111;
+    stroke-width: 4;
+}
+
+.body-line {
+    fill: none;
+    stroke: #111;
+    stroke-width: 7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
