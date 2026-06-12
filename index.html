@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Macro Calculator</title>
+    <title>Macromanagers</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
@@ -16,6 +16,7 @@
         <h1 id="home-title">Macro Calculator</h1>
         <p class="home-text">Please Fill Out the Form for Accurate Meal Plans:</p>
         <button id="start-button" class="start-button" type="button">Form</button>
+        <button id="browse-meals-button" type="button">Browse Meals</button>
         <form id="login-form" class="login-form">
             <label for="login-email">For Returning Users:</label>
             <input id="login-email" name="login-email" type="email" placeholder="Email">
@@ -107,7 +108,12 @@
 
     <div id="mealspage" class="page formpage hidden">
         <h1 id="meals-title">Meals</h1>
+        <p id="meals-description" class="meals-description"></p>
         <div id="meals-grid" class="meals-grid" aria-label="Meal recommendations"></div>
+    </div>
+
+    <div id="meal-detail-page" class="page formpage hidden">
+        <div id="meal-detail-content" class="meal-detail-content"></div>
     </div>
 </main>
 
